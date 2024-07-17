@@ -5,9 +5,7 @@
   License: https://bootstrapmade.com/license/
 */
 
-/*======================================
-//--//-->   STYLES GENERALES
-======================================*/
+/*STYLES GENERALES */
 
 body {
   background-color: #fdfdff;
@@ -137,7 +135,7 @@ a:hover {
 
 .title-s {
   font-weight: 600;
-  color: #ffffff;
+  color: #000000;
   font-size: 1.1rem;
 }
 
