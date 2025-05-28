@@ -753,7 +753,7 @@ main {
   width: 100px; /* Set desired width */
   height: 100px; /* Set desired height */
   object-fit: contain; /* Keeps the image aspect ratio */
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   transition: var(--transition-1);
 }
 
