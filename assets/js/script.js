@@ -157,3 +157,50 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Section fade/slide-in animation
+function revealSectionsOnScroll() {
+  const sections = document.querySelectorAll('article, .sidebar');
+  const windowHeight = window.innerHeight;
+  sections.forEach(section => {
+    if (!section.classList.contains('section-animate')) {
+      section.classList.add('section-animate');
+    }
+    const rect = section.getBoundingClientRect();
+    if (rect.top < windowHeight - 80) {
+      section.classList.add('visible');
+    } else {
+      section.classList.remove('visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealSectionsOnScroll);
+window.addEventListener('DOMContentLoaded', revealSectionsOnScroll);
+
+// Navbar underline animation
+const navbar = document.querySelector('.navbar');
+const navbarLinks = document.querySelectorAll('.navbar-link');
+if (navbar && navbarLinks.length) {
+  const underline = document.createElement('div');
+  underline.className = 'navbar-underline';
+  navbar.appendChild(underline);
+  function moveUnderline(el) {
+    const rect = el.getBoundingClientRect();
+    const navRect = navbar.getBoundingClientRect();
+    underline.style.left = (rect.left - navRect.left + navbar.scrollLeft) + 'px';
+    underline.style.width = rect.width + 'px';
+  }
+  let activeLink = document.querySelector('.navbar-link.active') || navbarLinks[0];
+  moveUnderline(activeLink);
+  navbarLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => moveUnderline(link));
+    link.addEventListener('focus', () => moveUnderline(link));
+    link.addEventListener('mouseleave', () => moveUnderline(activeLink));
+    link.addEventListener('blur', () => moveUnderline(activeLink));
+    link.addEventListener('click', () => {
+      activeLink = link;
+      moveUnderline(activeLink);
+    });
+  });
+  window.addEventListener('resize', () => moveUnderline(activeLink));
+}

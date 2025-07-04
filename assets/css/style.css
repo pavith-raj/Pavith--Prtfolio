@@ -431,6 +431,96 @@ main {
 
 .social-list {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  padding-bottom: 4px;
+  padding-left: 7px;
+}
+
+/* Contact Social List Styling */
+.contact .social-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin: 32px 0 24px 0;
+  padding: 0;
+}
+
+.contact .social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--light-gray, #fff);
+  font-size: 18px;
+  background: var(--onyx);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  position: relative;
+  cursor: pointer;
+}
+
+.contact .social-link span {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--onyx);
+  color: var(--orange-yellow-crayola);
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  z-index: 2;
+}
+
+.contact .social-link:hover,
+.contact .social-link:focus {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  transform: translateY(-4px) scale(1.08);
+}
+
+.contact .social-link:hover span,
+.contact .social-link:focus span {
+  display: block;
+}
+
+.contact .social-link ion-icon {
+  font-size: 28px;
+  vertical-align: middle;
+}
+
+@media (max-width: 580px) {
+  .contact .social-list {
+    gap: 18px;
+  }
+  .contact .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .contact .social-link ion-icon {
+    font-size: 20px;
+  }
+  .contact .social-link span {
+    top: 44px;
+    font-size: 13px;
+  }
+}
+
+.sidebar-social-list {
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
@@ -438,18 +528,15 @@ main {
   padding-left: 7px;
 }
 
-.social-item .social-link {
+.sidebar-social-link {
   color: var(--light-gray-70);
   font-size: 18px;
+  transition: color 0.3s;
 }
 
-
-
-.social-item .social-link:hover { color: var(--light-gray); }
-
-
-
-
+.sidebar-social-link:hover {
+  color: var(--light-gray);
+}
 
 /*-----------------------------------*\
   #NAVBAR
