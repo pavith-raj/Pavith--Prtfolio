@@ -521,11 +521,11 @@ main {
 
 .sidebar-social-list {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 15px;
   padding-bottom: 4px;
-  padding-left: 7px;
+  padding-left: 0;
 }
 
 .sidebar-social-link {
@@ -536,6 +536,13 @@ main {
 
 .sidebar-social-link:hover {
   color: var(--light-gray);
+}
+
+.email-icon, .github-icon, .location-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.email-icon:hover, .github-icon:hover, .location-icon:hover {
+  transform: scale(1.25);
 }
 
 /*-----------------------------------*\
@@ -837,9 +844,9 @@ main {
 }
 
 .clients-item img {
-  width: 100px; /* Set desired width */
-  height: 100px; /* Set desired height */
-  object-fit: contain; /* Keeps the image aspect ratio */
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
   /* filter: grayscale(1); */
   transition: var(--transition-1);
 }
@@ -1969,4 +1976,35 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+.clients-title, .skills-title {
+  font-size: var(--fs-4);
+}
+
+.clients-title:contains('Tools & Platform') + .clients-list {
+  gap: 10px !important;
+  justify-content: flex-start;
+}
+
+.clients-title:contains('Tools & Platform') + .clients-list .clients-item {
+  min-width: unset;
+  margin-right: 8px;
+}
+
+/* For better performance, compress images before using them in production. */
+
+.skills-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.skills-responsive .clients-item {
+  min-width: unset;
+  margin-right: 8px;
+}
+@media (max-width: 600px) {
+  .skills-responsive { gap: 4px; }
+  .skills-responsive .clients-item { margin-right: 4px; }
 }

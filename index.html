@@ -10,7 +10,7 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/Photo.jpg" type="image/jpeg">
 
   <!--
     - custom css link
@@ -69,7 +69,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+              <ion-icon name="mail-outline" class="email-icon"></ion-icon>
             </div>
 
             <div class="contact-info">
@@ -83,7 +83,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="logo-github"></ion-icon>
+              <ion-icon name="logo-github" class="github-icon"></ion-icon>
             </div>
             <div class="contact-info">
               <p class="contact-title">GitHub</p>
@@ -94,7 +94,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
+              <ion-icon name="location-outline" class="location-icon"></ion-icon>
             </div>
 
             <div class="contact-info">
@@ -192,10 +192,9 @@
 
         <section class="about-text">
           <p>
-            MCA graduate with hands-on experience in building full-stack web applications using technologies like React.js, Node.js, and MongoDB.
- Familiar with RESTful API development and software development lifecycle (SDLC) practices. Known for being
- adaptable, collaborative, and committed to continuous learning and delivering impactful solutions in dynamic teams.            
-          </p>
+            MCA graduate skilled in full-stack development (React.js, Node.js, MongoDB) with hands-on experience building
+            scalable web applications. Proficient in RESTful APIs, Agile practices, and debugging. Quick learner with strong
+            collaboration and problem-solving skills, familiar with software development lifecycle (SDLC) practices. 
         </section>
 
 
@@ -266,42 +265,38 @@
 
         </section>
 
+        <!--
+          - Internship
+        -->
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Internship</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Full Stack Developer Intern</h4>
+              <span>Softionik Solutions Pvt Ltd | May 2025 - Present</span>
+              <p class="timeline-text">
+                Built SportsLine, an e-commerce app for sports goods and jerseys, with full-stack features using React.js, Node.js, MongoDB, and Express.js. Integrated REST APIs for products, orders, and user auth.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Web Development Intern</h4>
+              <span>St Joseph Engineering College, Mangalore | Oct 2024 - Nov 2024</span>
+              <p class="timeline-text">
+                Developed a web-based IA Management System to streamline academic operations. Built the Admin Module for managing faculty, student data, and subject assignments using HTML, CSS, PHP, MySQL, and Bootstrap.
+              </p>
+            </li>
+          </ol>
+        </section>
 
         <!--
           - testimonials
         -->
-<!-- 
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Rohit Patil</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-          </ul>
-
-        </section> -->
-
 
         <!--
           - testimonials modal
@@ -368,17 +363,17 @@
 
           <h3 class="h3 clients-title">Programming Languages</h3>
 
-          <ul class="clients-list has-scrollbar">
+          <ul class="clients-list has-scrollbar skills-responsive">
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/Python.png" alt="client logo">
+                <img src="./assets/images/Python.png" alt="Python Logo" loading="lazy">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/javascript.png" alt="client logo">
+                <img src="./assets/images/javascript.png" alt="JavaScript Logo" loading="lazy">
               </a>
             </li>
 
@@ -389,16 +384,16 @@
 
           <h3 class="h3 clients-title">Frameworks</h3>
 
-          <ul class="clients-list has-scrollbar">
+          <ul class="clients-list has-scrollbar skills-responsive">
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/React.png" alt="client logo">
+                <img src="./assets/images/React.png" alt="React Logo" loading="lazy">
               </a>
             </li>
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/nodejs.png" alt="client logo">
+                <img src="./assets/images/nodejs.png" alt="Node.js Logo" loading="lazy">
               </a>
             </li>
           </ul>
@@ -407,16 +402,16 @@
 
           <h3 class="h3 clients-title">Database</h3>
 
-          <ul class="clients-list has-scrollbar">
+          <ul class="clients-list has-scrollbar skills-responsive">
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/mysql.png" alt="client logo">
+                <img src="./assets/images/mysql.png" alt="MySQL Logo" loading="lazy">
               </a>
             </li>
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/MongoDB.png" alt="client logo">
+                <img src="./assets/images/MongoDB.png" alt="MongoDB Logo" loading="lazy">
               </a>
             </li>
           </ul>
@@ -426,32 +421,32 @@
 
           <h3 class="h3 clients-title">Tools & Platform</h3>
 
-          <ul class="clients-list has-scrollbar">
+          <ul class="clients-list has-scrollbar skills-responsive">
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/aws.png" alt="client logo">
+                <img src="./assets/images/aws.png" alt="AWS Logo" loading="lazy">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/vscode.png" alt="client logo">
+                <img src="./assets/images/vscode.png" alt="VS Code Logo" loading="lazy">
               </a>
             </li>
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/github.png" alt="client logo">
+                <img src="./assets/images/github.png" alt="GitHub Logo" loading="lazy">
               </a>
             </li>
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/photoshop.png" alt="client logo">
+                <img src="./assets/images/photoshop.png" alt="Adobe Photoshop Logo" loading="lazy">
               </a>
             </li>
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/premierepro.png" alt="client logo">
+                <img src="./assets/images/premierepro.png" alt="Adobe Premiere Pro Logo" loading="lazy">
               </a>
             </li>
           </ul>
@@ -539,7 +534,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/spare.png" alt="SpareParts" loading="lazy">
+                  <img src="./assets/images/spare.png" alt="Spare Parts Project" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Spare Parts Depot</h3>
@@ -557,7 +552,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/reviewbite.jpg" alt="reviewbite" loading="lazy">
+                  <img src="./assets/images/reviewbite.jpg" alt="ReviewBite Project" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">ReviewBite | Food Review App</h3>
