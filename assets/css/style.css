@@ -1,3 +1,23 @@
+/* Explore my works button styling */
+.explore-works-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 32px;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(255, 226, 89, 0.12);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  margin-top: 8px;
+}
+.explore-works-btn:hover, .explore-works-btn:focus {
+  background: linear-gradient(90deg, #ffa751 0%, #ffe259 100%);
+  color: #000;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(255, 226, 89, 0.18);
+}
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/

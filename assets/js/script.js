@@ -78,20 +78,18 @@ for (let i = 0; i < selectItems.length; i++) {
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
+
 const filterFunc = function (selectedValue) {
-
   for (let i = 0; i < filterItems.length; i++) {
-
+    const itemCategory = filterItems[i].dataset.category ? filterItems[i].dataset.category.toLowerCase() : "";
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (selectedValue === itemCategory) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
-
 }
 
 // add event in all filter button items for large screen
@@ -155,6 +153,31 @@ for (let i = 0; i < navigationLinks.length; i++) {
       }
     }
 
+  });
+}
+
+// Make 'Explore my works' button show Projects section and scroll to it
+const exploreWorksBtn = document.querySelector('.explore-works-btn');
+if (exploreWorksBtn) {
+  exploreWorksBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Activate Projects section
+    const pages = document.querySelectorAll('[data-page]');
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    for (let i = 0; i < pages.length; i++) {
+      if (pages[i].dataset.page === 'projects') {
+        pages[i].classList.add('active');
+        navLinks[i].classList.add('active');
+      } else {
+        pages[i].classList.remove('active');
+        navLinks[i].classList.remove('active');
+      }
+    }
+    // Smooth scroll to projects section
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 }
 
