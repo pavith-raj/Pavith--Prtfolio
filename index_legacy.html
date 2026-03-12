@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavith Portfolio</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/Photo.jpg" type="image/jpeg">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'smoky-black': 'hsl(0, 0%, 7%)',
+            'eerie-black': 'hsl(240, 2%, 12%)',
+            'eerie-black-alpha': 'hsla(240, 2%, 12%, 0.7)',
+            'jet': 'hsl(240, 1%, 17%)',
+            'orange-yellow': 'hsl(45, 100%, 72%)',
+            'vegas-gold': 'hsl(45, 54%, 58%)'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Base Styles */
+    body {
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: hsl(0, 0%, 7%);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(240, 1%, 17%);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(45, 100%, 72%);
+    }
+
+    .glass-panel {
+      background: hsla(240, 2%, 12%, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid hsl(240, 1%, 17%);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-video {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    /* Reveal Animation Classes */
+    .section-animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .section-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hide scrollbar for horizonal lists */
+    .hide-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-smoky-black text-white antialiased min-h-screen relative font-sans">
+
+  <!-- Background Blobs -->
+  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div
+      class="absolute w-[40vw] h-[40vw] bg-orange-yellow/20 rounded-full blur-[100px] -top-[10%] -left-[10%] animate-pulse"
+      style="animation-duration: 10s;"></div>
+    <div
+      class="absolute w-[30vw] h-[30vw] bg-vegas-gold/20 rounded-full blur-[100px] bottom-[10%] -right-[10%] animate-pulse"
+      style="animation-duration: 7s;"></div>
+  </div>
+
+  <main class="max-w-7xl mx-auto p-4 md:p-8 flex flex-col lg:flex-row gap-8 items-start relative pb-28">
+
+    <!-- SIDEBAR -->
+    <aside
+      class="glass-panel w-full lg:w-80 flex-shrink-0 rounded-3xl p-6 lg:sticky lg:top-8 z-10 transition-all duration-300">
+      <div class="flex flex-row lg:flex-col items-center gap-6 lg:gap-0">
+        <img src="./assets/images/Photo.jpg" alt="Pavith Raj"
+          class="w-32 h-32 rounded-3xl object-cover lg:mb-4 shadow-lg">
+        <div class="flex flex-col items-start lg:items-center">
+          <h1 class="text-2xl font-semibold text-white mb-2">Pavith Raj</h1>
+          <p class="px-3 py-1 bg-jet rounded-lg text-xs tracking-wide text-white">VR Programmer</p>
+        </div>
+      </div>
+
+      <hr class="border-jet my-6 hidden lg:block">
+
+      <div class="flex flex-col gap-6 mt-6 lg:mt-0">
+        <div class="flex items-center gap-4 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-jet flex items-center justify-center text-orange-yellow shadow-md group-hover:scale-110 transition-transform">
+            <ion-icon name="mail-outline" class="text-2xl"></ion-icon>
+          </div>
+          <div class="overflow-hidden">
+            <p class="text-[11px] text-gray-400 uppercase font-semibold">Email</p>
+            <a href="mailto:pavithraj802@gmail.com"
+              class="text-sm hover:text-orange-yellow transition-colors truncate block">pavithraj802@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-jet flex items-center justify-center text-orange-yellow shadow-md group-hover:scale-110 transition-transform">
+            <ion-icon name="logo-github" class="text-2xl"></ion-icon>
+          </div>
+          <div>
+            <p class="text-[11px] text-gray-400 uppercase font-semibold">GitHub</p>
+            <a href="https://github.com/pavith-raj"
+              class="text-sm hover:text-orange-yellow transition-colors">Pavith-raj</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-jet flex items-center justify-center text-orange-yellow shadow-md group-hover:scale-110 transition-transform">
+            <ion-icon name="location-outline" class="text-2xl"></ion-icon>
+          </div>
+          <div>
+            <p class="text-[11px] text-gray-400 uppercase font-semibold">Location</p>
+            <address class="text-sm not-italic">Mangalore, India</address>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-jet my-6">
+
+      <div class="flex justify-center gap-6">
+        <a href="https://www.linkedin.com/in/pavith-raj-"
+          class="text-gray-400 hover:text-orange-yellow hover:scale-125 transition-all text-xl"><ion-icon
+            name="logo-linkedin"></ion-icon></a>
+        <a href="https://x.com/pavith_shetty_?t=fPtuP9J0fMKBpptfM_ZE_w&s=09"
+          class="text-gray-400 hover:text-orange-yellow hover:scale-125 transition-all text-xl"><ion-icon
+            name="logo-twitter"></ion-icon></a>
+        <a href="https://www.instagram.com/pavith_shetty_?igsh=b2txMGhwa3hweHpk"
+          class="text-gray-400 hover:text-orange-yellow hover:scale-125 transition-all text-xl"><ion-icon
+            name="logo-instagram"></ion-icon></a>
+      </div>
+    </aside>
+
+    <!-- CONTENT AREA -->
+    <div class="w-full relative min-w-0">
+
+      <!-- NAVBAR -->
+      <nav
+        class="glass-panel fixed bottom-0 left-0 w-full lg:absolute lg:top-0 lg:left-auto lg:right-0 lg:w-auto lg:bottom-auto rounded-t-2xl lg:rounded-bl-3xl lg:rounded-tr-3xl lg:rounded-tl-none lg:rounded-br-none z-20 overflow-x-auto hide-scroll">
+        <ul class="flex justify-start lg:justify-center items-center gap-6 px-8 py-5 text-sm font-medium w-max mx-auto">
+          <li><button onclick="switchTab('about')" id="nav-about"
+              class="nav-btn text-orange-yellow transition-colors hover:text-orange-yellow">About</button></li>
+          <li><button onclick="switchTab('skills')" id="nav-skills"
+              class="nav-btn text-gray-400 transition-colors hover:text-orange-yellow">Skills</button></li>
+          <li><button onclick="switchTab('projects')" id="nav-projects"
+              class="nav-btn text-gray-400 transition-colors hover:text-orange-yellow">Projects</button></li>
+          <li><button onclick="switchTab('certificates')" id="nav-certificates"
+              class="nav-btn text-gray-400 transition-colors hover:text-orange-yellow">Certificates</button></li>
+          <li><button onclick="switchTab('contact')" id="nav-contact"
+              class="nav-btn text-gray-400 transition-colors hover:text-orange-yellow">Contact</button></li>
+        </ul>
+      </nav>
+
+      <!-- SECTIONS -->
+      <div class="glass-panel rounded-3xl p-6 md:p-10 lg:pt-24 mt-0 min-h-[80vh]">
+
+        <!-- ABOUT PAGE -->
+        <article id="page-about" class="page-section section-animate visible">
+          <header class="mb-8 relative inline-block">
+            <h2 class="text-3xl font-semibold text-white pb-3 tracking-wide">About Me</h2>
+            <div
+              class="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-orange-yellow to-vegas-gold rounded-full">
+            </div>
+          </header>
+
+          <div class="text-gray-300 font-light leading-relaxed space-y-4 mb-10">
+            <p><strong class="text-white font-medium">Currently a VR Programmer Intern</strong>, I am passionate about
+              immersive technologies and interactive experiences.</p>
+            <p>My expertise includes developing <strong class="text-white font-medium">virtual reality
+                applications</strong>, <strong class="text-white font-medium">3D environments</strong>, and <strong
+                class="text-white font-medium">interactive simulations</strong> using <strong
+                class="text-white font-medium">Unity</strong>, <strong class="text-white font-medium">C#</strong>, and
+              <strong class="text-white font-medium">VR hardware</strong>.
+            </p>
+            <p>I am also skilled in <strong class="text-white font-medium">full-stack web development</strong>
+              (React.js, Node.js, MongoDB), <strong class="text-white font-medium">RESTful APIs</strong>, and <strong
+                class="text-white font-medium">Agile practices</strong>.</p>
+            <p>Quick to learn and adapt, I enjoy collaborating in teams and am committed to delivering innovative
+              solutions.</p>
+
+            <div class="text-center md:text-left mt-8">
+              <button onclick="switchTab('projects')"
+                class="relative overflow-hidden inline-block bg-gradient-to-r from-[#ffe259] to-[#ffa751] text-black font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 z-10 group">
+                <span class="relative z-10">Explore my works</span>
+                <div
+                  class="absolute inset-0 bg-white/40 -translate-x-full group-hover:translate-x-full transform transition-transform duration-500 z-0">
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Internships -->
+          <div class="mb-10">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-jet rounded-xl flex items-center justify-center text-orange-yellow shadow-md">
+                <ion-icon name="briefcase-outline" class="text-2xl"></ion-icon>
+              </div>
+              <h3 class="text-xl font-semibold text-white">Internship</h3>
+            </div>
+
+            <ol class="border-l-2 border-jet ml-6 space-y-8">
+              <li class="relative pl-8">
+                <div class="absolute w-4 h-4 rounded-full bg-orange-yellow shadow-[0_0_10px_#ffce45] -left-[9px] top-1">
+                </div>
+                <h4 class="text-white font-medium text-lg leading-snug">VR Programmer Intern</h4>
+                <p class="text-orange-yellow text-sm mb-2 font-medium">Karanji InfoTech Pvt Ltd | Aug 2025 - Present</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Currently learning VR development, focusing on building
+                  immersive experiences and interactive 3D simulations using Unity and C#.</p>
+              </li>
+              <li class="relative pl-8">
+                <div class="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
+                <h4 class="text-white font-medium text-lg leading-snug">Full Stack Developer Intern</h4>
+                <p class="text-orange-yellow text-sm mb-2 font-medium">Softionik Solutions Pvt Ltd | May 2025 - July
+                  2025</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Built SportsLine, an e-commerce app for sports goods
+                  and jerseys, with full-stack features using React.js, Node.js, MongoDB, and Express.js. Integrated
+                  REST APIs for products, orders, and user auth.</p>
+              </li>
+              <li class="relative pl-8">
+                <div class="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
+                <h4 class="text-white font-medium text-lg leading-snug">Web Development Intern</h4>
+                <p class="text-orange-yellow text-sm mb-2 font-medium">St Joseph Engineering College, Mangalore | Oct
+                  2024 - Nov 2024</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Developed a web-based IA Management System to
+                  streamline academic operations. Built the Admin Module for managing faculty, student data, and subject
+                  assignments using HTML, CSS, PHP, MySQL, and Bootstrap.</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Education -->
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-jet rounded-xl flex items-center justify-center text-orange-yellow shadow-md">
+                <ion-icon name="book-outline" class="text-2xl"></ion-icon>
+              </div>
+              <h3 class="text-xl font-semibold text-white">Education</h3>
+            </div>
+
+            <ol class="border-l-2 border-jet ml-6 space-y-8">
+              <li class="relative pl-8">
+                <div class="absolute w-4 h-4 rounded-full bg-orange-yellow shadow-[0_0_10px_#ffce45] -left-[9px] top-1">
+                </div>
+                <h4 class="text-white font-medium text-lg leading-snug">St Joseph Engineering College</h4>
+                <p class="text-orange-yellow text-sm mb-2 font-medium">2023 - 2025</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Master of Computer Application</p>
+              </li>
+              <li class="relative pl-8">
+                <div class="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
+                <h4 class="text-white font-medium text-lg leading-snug">Sri Ramakrishna College</h4>
+                <p class="text-orange-yellow text-sm mb-2 font-medium">2020 - 2023</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Bachelor of Computer Application</p>
+              </li>
+              <li class="relative pl-8">
+                <div class="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
+                <h4 class="text-white font-medium text-lg leading-snug">Chemnad Jama-ath Higher Secondary School</h4>
+                <p class="text-orange-yellow text-sm mb-2 font-medium">July 2018 - March 2020</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Pre-University Education</p>
+              </li>
+              <li class="relative pl-8">
+                <div class="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
+                <h4 class="text-white font-medium text-lg leading-snug">B.E.M.H.S Kasaragod</h4>
+                <p class="text-orange-yellow text-sm mb-2 font-medium">March 2018</p>
+                <p class="text-gray-400 text-sm leading-relaxed">High School Education</p>
+              </li>
+            </ol>
+          </div>
+        </article>
+
+        <!-- SKILLS PAGE -->
+        <article id="page-skills" class="page-section hidden">
+          <header class="mb-8 relative inline-block">
+            <h2 class="text-3xl font-semibold text-white pb-3 tracking-wide">Skills</h2>
+            <div
+              class="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-orange-yellow to-vegas-gold rounded-full">
+            </div>
+          </header>
+
+          <div class="space-y-10">
+            <!-- Programming Languages -->
+            <section>
+              <h3 class="text-xl font-medium text-white mb-6">Programming Languages</h3>
+              <div class="flex flex-wrap gap-4">
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/c-sharp.png" alt="C#" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/Python.png" alt="Python" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/javascript.png" alt="Javascript"
+                    class="max-w-full max-h-full object-contain">
+                </div>
+              </div>
+            </section>
+
+            <!-- Frameworks -->
+            <section>
+              <h3 class="text-xl font-medium text-white mb-6">Frameworks</h3>
+              <div class="flex flex-wrap gap-4">
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/React.png" alt="React" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/nodejs.png" alt="Node.js" class="max-w-full max-h-full object-contain">
+                </div>
+              </div>
+            </section>
+
+            <!-- Database -->
+            <section>
+              <h3 class="text-xl font-medium text-white mb-6">Database</h3>
+              <div class="flex flex-wrap gap-4">
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/mysql.png" alt="MySQL" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/MongoDB.png" alt="MongoDB" class="max-w-full max-h-full object-contain">
+                </div>
+              </div>
+            </section>
+
+            <!-- Tools & Platform -->
+            <section>
+              <h3 class="text-xl font-medium text-white mb-6">Tools & Platform</h3>
+              <div class="flex flex-wrap gap-4">
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/Unity.png" alt="Unity" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/aws.png" alt="AWS" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/vscode.png" alt="VS Code" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/github.png" alt="GitHub" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/photoshop.png" alt="Photoshop" class="max-w-full max-h-full object-contain">
+                </div>
+                <div
+                  class="bg-jet p-4 rounded-2xl shadow-md border border-white/5 hover:-translate-y-2 hover:border-orange-yellow/50 transition-all duration-300 w-24 h-24 flex items-center justify-center">
+                  <img src="./assets/images/premierepro.png" alt="Premiere Pro"
+                    class="max-w-full max-h-full object-contain">
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <!-- PROJECTS PAGE -->
+        <article id="page-projects" class="page-section hidden">
+          <header class="mb-8 relative inline-block">
+            <h2 class="text-3xl font-semibold text-white pb-3 tracking-wide">Projects</h2>
+            <div
+              class="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-orange-yellow to-vegas-gold rounded-full">
+            </div>
+          </header>
+
+          <ul class="flex flex-wrap gap-6 mb-8 text-sm md:text-base font-medium">
+            <li><button onclick="filterProjects('all')" id="filter-all"
+                class="filter-btn text-orange-yellow border-none transition-colors hover:text-orange-yellow">All</button>
+            </li>
+            <li><button onclick="filterProjects('unity')" id="filter-unity"
+                class="filter-btn text-gray-400 border-none transition-colors hover:text-orange-yellow">Unity
+                Developments</button></li>
+            <li><button onclick="filterProjects('web')" id="filter-web"
+                class="filter-btn text-gray-400 border-none transition-colors hover:text-orange-yellow">Web
+                Applications</button></li>
+            <li><button onclick="filterProjects('mobile')" id="filter-mobile"
+                class="filter-btn text-gray-400 border-none transition-colors hover:text-orange-yellow">Mobile
+                Applications</button></li>
+          </ul>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Project 1 -->
+            <div class="project-card unity group cursor-pointer"
+              onclick="window.open('https://drive.google.com/file/d/1kWpzbFt8iHlqjE0qNTbIVQzaBjvhuyzE/view?usp=sharing','_blank')">
+              <div
+                class="relative overflow-hidden rounded-2xl mb-4 bg-jet border border-white/5 group-hover:border-orange-yellow/50 shadow-lg group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500">
+                <div
+                  class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div
+                    class="bg-orange-yellow w-12 h-12 rounded-xl flex items-center justify-center text-black text-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </div>
+                <video class="project-video group-hover:scale-105 transition-transform duration-500"
+                  poster="./assets/images/Tekken.png" autoplay loop muted>
+                  <source src="./assets/Videos/TekkenClone Recordings.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <h3 class="text-white font-medium text-lg">TekkenClone Unity 3D</h3>
+              <p class="text-gray-400 text-sm font-light">Unity Developments</p>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card unity group cursor-pointer"
+              onclick="window.open('https://drive.google.com/file/d/18axS1hIdEc8lvtd-_Q1oQE4C98X5Vs8r/view?usp=sharing','_blank')">
+              <div
+                class="relative overflow-hidden rounded-2xl mb-4 bg-jet border border-white/5 group-hover:border-orange-yellow/50 shadow-lg group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500">
+                <div
+                  class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div
+                    class="bg-orange-yellow w-12 h-12 rounded-xl flex items-center justify-center text-black text-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </div>
+                <video class="project-video group-hover:scale-105 transition-transform duration-500"
+                  poster="./assets/images/VrBowling.png" autoplay loop muted>
+                  <source src="./assets/Videos/VR Bowling Game 2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <h3 class="text-white font-medium text-lg">VR Bowling Game</h3>
+              <p class="text-gray-400 text-sm font-light">Unity Developments</p>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card unity group cursor-pointer"
+              onclick="window.open('https://drive.google.com/file/d/1_qopDSredpyiSMkqcaqs6JRemOaOMgGP/view?usp=sharing','_blank')">
+              <div
+                class="relative overflow-hidden rounded-2xl mb-4 bg-jet border border-white/5 group-hover:border-orange-yellow/50 shadow-lg group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500">
+                <div
+                  class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div
+                    class="bg-orange-yellow w-12 h-12 rounded-xl flex items-center justify-center text-black text-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </div>
+                <video class="project-video group-hover:scale-105 transition-transform duration-500"
+                  poster="./assets/images/2dgame.png" autoplay loop muted>
+                  <source src="./assets/Videos/2D Jumping Game.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <h3 class="text-white font-medium text-lg">2D Mono Game</h3>
+              <p class="text-gray-400 text-sm font-light">Unity Developments</p>
+            </div>
+
+            <!-- Project 4 (AuraX) -->
+            <div class="project-card mobile group cursor-pointer"
+              onclick="window.open('https://github.com/pavith-raj/AuraX.git','_blank')">
+              <div
+                class="relative overflow-hidden rounded-2xl mb-4 bg-jet border border-white/5 group-hover:border-orange-yellow/50 shadow-lg group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500 h-[220px] flex items-center justify-center">
+                <div
+                  class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div
+                    class="bg-orange-yellow w-12 h-12 rounded-xl flex items-center justify-center text-black text-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </div>
+                <img src="./assets/images/Aurax1.png" alt="AuraX"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <h3 class="text-white font-medium text-lg">AuraX - Beauty Services</h3>
+              <p class="text-gray-400 text-sm font-light">Mobile Applications</p>
+            </div>
+
+            <!-- Project 5 (Spare Parts) -->
+            <div class="project-card web group cursor-pointer"
+              onclick="window.open('https://github.com/pavith-raj/SpareParts.git','_blank')">
+              <div
+                class="relative overflow-hidden rounded-2xl mb-4 bg-jet border border-white/5 group-hover:border-orange-yellow/50 shadow-lg group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500 h-[220px] flex items-center justify-center">
+                <div
+                  class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div
+                    class="bg-orange-yellow w-12 h-12 rounded-xl flex items-center justify-center text-black text-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </div>
+                <img src="./assets/images/spare.png" alt="Spare Parts Depot"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <h3 class="text-white font-medium text-lg">Spare Parts Depot</h3>
+              <p class="text-gray-400 text-sm font-light">Web Applications</p>
+            </div>
+
+            <!-- Project 6 (ReviewBite) -->
+            <div class="project-card mobile group cursor-pointer"
+              onclick="window.open('https://github.com/pavith-raj/Review-Bite.git','_blank')">
+              <div
+                class="relative overflow-hidden rounded-2xl mb-4 bg-jet border border-white/5 group-hover:border-orange-yellow/50 shadow-lg group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500 h-[220px] flex items-center justify-center">
+                <div
+                  class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div
+                    class="bg-orange-yellow w-12 h-12 rounded-xl flex items-center justify-center text-black text-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </div>
+                <img src="./assets/images/reviewbite.jpg" alt="Review Bite"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <h3 class="text-white font-medium text-lg">ReviewBite | Food Review App</h3>
+              <p class="text-gray-400 text-sm font-light">Mobile Applications</p>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- CERTIFICATES PAGE -->
+        <article id="page-certificates" class="page-section hidden">
+          <header class="mb-8 relative inline-block">
+            <h2 class="text-3xl font-semibold text-white pb-3 tracking-wide">Certificates</h2>
+            <div
+              class="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-orange-yellow to-vegas-gold rounded-full">
+            </div>
+          </header>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              class="bg-jet rounded-2xl shadow-lg border border-white/5 overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <img src="./assets/images/certificates/Python Foundation Certification.jpeg" alt="Python Foundation"
+                class="w-full h-48 object-cover">
+              <div class="p-6">
+                <h3 class="text-white font-semibold text-lg mb-2">Python Foundation Certification</h3>
+                <p class="text-orange-yellow text-sm">Infosys Springboard</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-jet rounded-2xl shadow-lg border border-white/5 overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <img src="./assets/images/certificates/Object Oriented Programming using Python.jpeg" alt="OOP Python"
+                class="w-full h-48 object-cover">
+              <div class="p-6">
+                <h3 class="text-white font-semibold text-lg mb-2">Object Oriented Programming using Python</h3>
+                <p class="text-orange-yellow text-sm">Infosys Springboard</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-jet rounded-2xl shadow-lg border border-white/5 overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <img src="./assets/images/certificates/Software Engineering and Agile Software Development.jpeg"
+                alt="Software Engineering" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <h3 class="text-white font-semibold text-lg mb-2">Software Eng & Agile Development</h3>
+                <p class="text-orange-yellow text-sm">Infosys Springboard</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-jet rounded-2xl shadow-lg border border-white/5 overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <img src="./assets/images/certificates/webdevlopment.png" alt="Web Development"
+                class="w-full h-48 object-cover bg-white">
+              <div class="p-6">
+                <h3 class="text-white font-semibold text-lg mb-2">Web Development (HTML, CSS, JS)</h3>
+                <p class="text-orange-yellow text-sm">Coursera (IBM)</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CONTACT PAGE -->
+        <article id="page-contact" class="page-section hidden">
+          <header class="mb-8 relative inline-block">
+            <h2 class="text-3xl font-semibold text-white pb-3 tracking-wide">Contact</h2>
+            <div
+              class="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-orange-yellow to-vegas-gold rounded-full">
+            </div>
+          </header>
+
+          <p class="text-gray-300 text-lg mb-10">Feel free to reach out to me below!</p>
+
+          <div class="flex flex-wrap justify-center gap-10 lg:gap-16">
+            <a href="https://www.linkedin.com/in/pavith-raj-"
+              class="flex flex-col items-center gap-3 group text-gray-400 hover:text-white transition-colors">
+              <div
+                class="w-16 h-16 bg-jet rounded-full flex items-center justify-center shadow-lg group-hover:-translate-y-2 group-hover:bg-orange-yellow group-hover:text-black transition-all duration-300 text-3xl">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </div>
+              <span class="font-medium text-sm">LinkedIn</span>
+            </a>
+
+            <a href="https://x.com/pavith_shetty_?t=fPtuP9J0fMKBpptfM_ZE_w&s=09"
+              class="flex flex-col items-center gap-3 group text-gray-400 hover:text-white transition-colors">
+              <div
+                class="w-16 h-16 bg-jet rounded-full flex items-center justify-center shadow-lg group-hover:-translate-y-2 group-hover:bg-orange-yellow group-hover:text-black transition-all duration-300 text-3xl">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </div>
+              <span class="font-medium text-sm">X (Twitter)</span>
+            </a>
+
+            <a href="https://www.instagram.com/pavith_shetty_?igsh=b2txMGhwa3hweHpk"
+              class="flex flex-col items-center gap-3 group text-gray-400 hover:text-white transition-colors">
+              <div
+                class="w-16 h-16 bg-jet rounded-full flex items-center justify-center shadow-lg group-hover:-translate-y-2 group-hover:bg-orange-yellow group-hover:text-black transition-all duration-300 text-3xl">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </div>
+              <span class="font-medium text-sm">Instagram</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Tab Switching Logic
+    function switchTab(tabId) {
+      // Hide all pages
+      document.querySelectorAll('.page-section').forEach(page => {
+        page.classList.add('hidden');
+        page.classList.remove('section-animate', 'visible');
+      });
+
+      // Show selected page
+      const activePage = document.getElementById('page-' + tabId);
+      if (activePage) {
+        activePage.classList.remove('hidden');
+        setTimeout(() => {
+          activePage.classList.add('section-animate', 'visible');
+        }, 50); // slight delay to trigger CSS transition
+      }
+
+      // Update Nav Buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('text-orange-yellow');
+        btn.classList.add('text-gray-400');
+      });
+      const activeBtn = document.getElementById('nav-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-gray-400');
+        activeBtn.classList.add('text-orange-yellow');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Projects Filtering Logic
+    function filterProjects(category) {
+      // Update Filter Buttons Style
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('text-orange-yellow');
+        btn.classList.add('text-gray-400');
+      });
+      document.getElementById('filter-' + category).classList.remove('text-gray-400');
+      document.getElementById('filter-' + category).classList.add('text-orange-yellow');
+
+      // Filter Logic
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
