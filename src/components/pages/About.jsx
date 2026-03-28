@@ -38,8 +38,8 @@ const About = ({ setActiveTab }) => {
                 <div className="text-center md:text-left mt-8">
                     <button
                         onClick={() => {
-                            setActiveTab('projects');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            const section = document.getElementById('projects');
+                            if (section) section.scrollIntoView({ behavior: 'smooth' });
                         }}
                         className="inline-block bg-orange-yellow text-black font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
