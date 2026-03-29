@@ -30,10 +30,11 @@ const About = ({ setActiveTab }) => {
             </header>
 
             <div className="text-gray-300 font-light leading-relaxed space-y-4 mb-10">
-                <ScrollRevealText text="*Currently a VR Programmer Intern*, I am passionate about immersive technologies and interactive experiences." />
-                <ScrollRevealText text="My expertise includes developing *virtual reality applications*, *3D environments*, and *interactive simulations* using *Unity*, *C#*, and *VR hardware*." />
-                <ScrollRevealText text="I am also skilled in *full-stack web development* (React.js, Node.js, MongoDB), *RESTful APIs*, and *Agile practices*." />
-                <ScrollRevealText text="Quick to learn and adapt, I enjoy collaborating in teams and am committed to delivering innovative solutions." />
+                <ScrollRevealText text="*🤖 Currently working as a Junior GenAI Developer at Karanji Infotech" />
+                <ScrollRevealText text="🧠 Building and working with AI/GenAI solutions and real-world applications" />
+                <ScrollRevealText text="🕶️ Previously worked as a VR Programmer Intern, with experience in Unity and immersive development" />
+                <ScrollRevealText text="💻 Practical experience in full-stack web development (React.js, Node.js, MongoDB)" />
+                <ScrollRevealText text="🤝Quick to learn and adapt, I enjoy collaborating in teams and am committed to delivering innovative solutions." />
 
                 <div className="text-center md:text-left mt-8">
                     <button
@@ -54,15 +55,21 @@ const About = ({ setActiveTab }) => {
                     <div className="w-12 h-12 bg-jet rounded-xl flex items-center justify-center text-orange-yellow shadow-md">
                         <ion-icon name="briefcase-outline" className="text-2xl"></ion-icon>
                     </div>
-                    <h3 className="text-xl font-semibold text-white">Internship</h3>
+                    <h3 className="text-xl font-semibold text-white">Experience</h3>
                 </div>
 
                 <ol className="border-l-2 border-jet ml-6 space-y-8">
                     <li className="relative pl-8">
                         <div className="absolute w-4 h-4 rounded-full bg-orange-yellow shadow-[0_0_10px_#ffce45] -left-[9px] top-1"></div>
+                        <h4 className="text-white font-medium text-lg leading-snug">Junior GenAI Developer</h4>
+                        <p className="text-orange-yellow text-sm mb-2 font-medium">Karanji InfoTech Pvt Ltd | March 2026 - Present</p>
+                        <p className="text-gray-400 text-sm leading-relaxed">Working as a Junior GenAI Developer, developing AI-powered applications, integrating LLMs, and creating prompt-based workflows for automation and productivity.</p>
+                    </li>
+                    <li className="relative pl-8">
+                        <div className="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
                         <h4 className="text-white font-medium text-lg leading-snug">VR Programmer Intern</h4>
-                        <p className="text-orange-yellow text-sm mb-2 font-medium">Karanji InfoTech Pvt Ltd | Aug 2025 - Present</p>
-                        <p className="text-gray-400 text-sm leading-relaxed">Currently learning VR development, focusing on building immersive experiences and interactive 3D simulations using Unity and C#.</p>
+                        <p className="text-orange-yellow text-sm mb-2 font-medium">Karanji InfoTech Pvt Ltd | Aug 2025 - Feb 2026</p>
+                        <p className="text-gray-400 text-sm leading-relaxed">VR developer with internship experience in building immersive experiences and interactive 3D simulations using Unity and C#.</p>
                     </li>
                     <li className="relative pl-8">
                         <div className="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
