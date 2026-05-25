@@ -36,11 +36,9 @@ const Sidebar = () => {
         <header className="w-full flex flex-col items-center justify-center pt-10 pb-16 text-center z-10 transition-all duration-300">
             {/* Avatar Profile */}
             <motion.div custom={0} initial="hidden" animate="visible" variants={itemVariants} className="relative mb-8">
-                {/* Clean Rotating Glow purely behind avatar */}
-                <motion.div 
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 15, ease: "linear", repeat: Infinity }}
-                    className="absolute -inset-4 bg-gradient-to-tr from-orange-yellow/40 via-transparent to-vegas-gold/40 rounded-full blur-[25px]" 
+                {/* Clean Rotating Glow - CSS only for GPU compositing */}
+                <div 
+                    className="absolute -inset-4 bg-gradient-to-tr from-orange-yellow/40 via-transparent to-vegas-gold/40 rounded-full blur-[20px] avatar-glow-spin" 
                 />
                 <img
                     src="/assets/images/Photo.jpg"

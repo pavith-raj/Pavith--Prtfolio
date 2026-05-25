@@ -54,3 +54,50 @@
     scrollbar-width: none;
   }
 }
+
+/* GPU-accelerated particle animation */
+.particle-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: hsl(45, 100%, 72%);
+  will-change: transform, opacity;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(var(--x-move), var(--y-move), 0) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Avatar glow rotation - pure CSS, GPU composited */
+.avatar-glow-spin {
+  will-change: transform;
+  animation: glowSpin 15s linear infinite;
+}
+
+@keyframes glowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Background blob pulse */
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.6; 
+  }
+  50% { 
+    transform: scale(1.05); 
+    opacity: 1; 
+  }
+}

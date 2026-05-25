@@ -91,7 +91,7 @@ const Skills = () => {
                                     className="bg-jet p-4 rounded-2xl shadow-md border border-white/5 transition-colors duration-300 w-24 h-24 flex items-center justify-center cursor-pointer"
                                     title={item.name}
                                 >
-                                    <img src={`/assets/images/${item.img}`} alt={item.name} className="max-w-full max-h-full object-contain" />
+                                    <img src={`/assets/images/${item.img}`} alt={item.name} loading="lazy" className="max-w-full max-h-full object-contain" />
                                 </motion.div>
                             ))}
                         </motion.div>

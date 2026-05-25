@@ -55,6 +55,7 @@ const Certificates = () => {
                         <img
                             src={`/assets/images/certificates/${cert.image}`}
                             alt={cert.title}
+                            loading="lazy"
                             className={`w-full h-48 object-cover ${cert.image.endsWith('.png') ? 'bg-white' : ''}`}
                         />
                         <div className="p-6">

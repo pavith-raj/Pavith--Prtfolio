@@ -127,10 +127,12 @@ const Projects = () => {
                                     <video
                                         className="project-video group-hover:scale-105 transition-transform duration-500"
                                         poster={project.poster}
-                                        autoPlay
+                                        preload="none"
                                         loop
                                         muted
                                         playsInline
+                                        onMouseEnter={(e) => e.target.play().catch(() => {})}
+                                        onMouseLeave={(e) => { e.target.pause(); e.target.currentTime = 0; }}
                                     >
                                         <source src={project.src} type="video/mp4" />
                                     </video>
@@ -138,6 +140,7 @@ const Projects = () => {
                                     <img
                                         src={project.src}
                                         alt={project.title}
+                                        loading="lazy"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
                                 )}
