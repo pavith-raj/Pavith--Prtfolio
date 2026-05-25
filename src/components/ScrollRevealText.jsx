@@ -1,58 +1,36 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const WordReveal = ({ children, progress, range }) => {
-    const opacity = useTransform(progress, range, [0.2, 1]);
-    return (
-        <span className="relative inline-block">
-            <span className="absolute opacity-20">{children}</span>
-            <motion.span style={{ opacity }}>{children}</motion.span>
-        </span>
-    );
-};
-
-export default function ScrollRevealText({ text, className = "" }) {
+// Optimized: single transform for the whole paragraph instead of per-word
+const ScrollRevealText = ({ text, className = "" }) => {
     const element = useRef(null);
     const { scrollYProgress } = useScroll({
         target: element,
         offset: ['start 90%', 'start 60%']
     });
 
-    const parsedWords = [];
+    // Single opacity transform for the entire block
+    const opacity = useTransform(scrollYProgress, [0, 1], [0.15, 1]);
+    const y = useTransform(scrollYProgress, [0, 1], [8, 0]);
+
+    // Parse bold markers for rendering
     const parts = text.split('*');
-    parts.forEach((part, i) => {
-        const isBold = i % 2 === 1;
-        const tokens = part.match(/\S+|\s+/g) || [];
-        tokens.forEach(token => {
-            parsedWords.push({ text: token, isBold });
-        });
+    const rendered = parts.map((part, i) => {
+        if (i % 2 === 1) {
+            return <strong key={i} className="text-white font-medium">{part}</strong>;
+        }
+        return <span key={i}>{part}</span>;
     });
 
-    const textTokens = parsedWords.filter(w => /\S/.test(w.text));
-    const totalWords = textTokens.length;
-    let wordCount = 0;
-
     return (
-        <p className={className} ref={element}>
-            {parsedWords.map((wordObj, i) => {
-                if (/^\s+$/.test(wordObj.text)) {
-                    return <span key={i}>{wordObj.text}</span>;
-                }
-
-                const start = totalWords > 0 ? wordCount / totalWords : 0;
-                const end = totalWords > 0 ? start + (1 / totalWords) : 1;
-                wordCount++;
-
-                const content = wordObj.isBold ?
-                    <strong className="text-white font-medium">{wordObj.text}</strong> :
-                    wordObj.text;
-
-                return (
-                    <WordReveal key={i} progress={scrollYProgress} range={[start, end]}>
-                        {content}
-                    </WordReveal>
-                );
-            })}
-        </p>
+        <motion.p
+            className={className}
+            ref={element}
+            style={{ opacity, y, willChange: 'opacity, transform' }}
+        >
+            {rendered}
+        </motion.p>
     );
-}
+};
+
+export default ScrollRevealText;

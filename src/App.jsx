@@ -17,15 +17,15 @@ function App() {
             {/* Floating Fireflies Background */}
             <FloatingParticles />
 
-            {/* Background Blobs */}
-            <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none mix-blend-screen">
+            {/* Background Blobs - GPU accelerated */}
+            <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
                 <div
-                    className="absolute w-[40vw] h-[40vw] bg-orange-yellow/10 rounded-full blur-[100px] -top-[10%] -left-[10%] animate-pulse"
-                    style={{ animationDuration: '15s' }}
+                    className="absolute w-[40vw] h-[40vw] bg-orange-yellow/10 rounded-full blur-[60px] -top-[10%] -left-[10%]"
+                    style={{ animationDuration: '15s', willChange: 'transform', animation: 'pulse 15s ease-in-out infinite' }}
                 ></div>
                 <div
-                    className="absolute w-[30vw] h-[30vw] bg-vegas-gold/10 rounded-full blur-[100px] bottom-[10%] -right-[10%] animate-pulse"
-                    style={{ animationDuration: '12s' }}
+                    className="absolute w-[30vw] h-[30vw] bg-vegas-gold/10 rounded-full blur-[60px] bottom-[10%] -right-[10%]"
+                    style={{ animationDuration: '12s', willChange: 'transform', animation: 'pulse 12s ease-in-out infinite' }}
                 ></div>
             </div>
 
