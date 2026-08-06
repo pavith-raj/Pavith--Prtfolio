@@ -9,27 +9,93 @@ const pageVariants = {
 
 const Certificates = () => {
     const certificatesList = [
+        // --- AI / GenAI Certificates ---
+        {
+            title: 'Agentic AI',
+            issuer: 'DeepLearning.AI',
+            image: 'AgenticAI_Certificate.png'
+        },
+        {
+            title: 'RAG (Retrieval-Augmented Generation)',
+            issuer: 'DeepLearning.AI',
+            image: 'RAG_Certificate.png'
+        },
+        {
+            title: 'Introduction to MCP',
+            issuer: 'DeepLearning.AI',
+            image: 'Intro to mcp.png'
+        },
+        {
+            title: 'Introduction to Agent Skills',
+            issuer: 'DeepLearning.AI',
+            image: 'Intro to agent skills.png'
+        },
+        {
+            title: 'Claude with Anthropic API',
+            issuer: 'DeepLearning.AI',
+            image: 'Claude with Anthropic API.png'
+        },
+        // --- Python Certificates ---
         {
             title: 'Python Foundation Certification',
             issuer: 'Infosys Springboard',
             image: 'Python Foundation Certification.jpeg'
         },
         {
+            title: 'Basics of Python',
+            issuer: 'Infosys Springboard',
+            image: 'Bacis of Python.jpeg'
+        },
+        {
+            title: 'Programming Fundamentals Using Python Part 1',
+            issuer: 'Infosys Springboard',
+            image: 'Programming Fundamentals Using Python Part 1.jpeg'
+        },
+        {
+            title: 'Programming Fundamentals Using Python Part 2',
+            issuer: 'Infosys Springboard',
+            image: 'Programming Fundamentals Using Python Part 2.jpeg'
+        },
+        {
             title: 'Object Oriented Programming using Python',
             issuer: 'Infosys Springboard',
             image: 'Object Oriented Programming using Python.jpeg'
         },
+        // --- Database Certificates ---
+        {
+            title: 'Database Management System Part 1',
+            issuer: 'Infosys Springboard',
+            image: 'Database Management System Part 1.jpeg'
+        },
+        {
+            title: 'Database Management System Part 2',
+            issuer: 'Infosys Springboard',
+            image: 'Database Management System Part 2.jpeg'
+        },
+        {
+            title: 'Introduction to NoSQL Databases',
+            issuer: 'Infosys Springboard',
+            image: 'Introduction to NoSQL databases.jpeg'
+        },
+        // --- Software Engineering & Agile ---
         {
             title: 'Software Eng & Agile Development',
             issuer: 'Infosys Springboard',
             image: 'Software Engineering and Agile Software Development.jpeg'
         },
         {
-            title: 'Web Development (HTML, CSS, JS)',
-            issuer: 'Coursera (IBM)',
-            image: 'webdevlopment.png'
-        }
+            title: 'Agile Scrum in Practice',
+            issuer: 'Infosys Springboard',
+            image: 'Agile Scrum in Practice.jpeg'
+        },
+        // --- Cloud ---
+        {
+            title: 'AWS Workshop',
+            issuer: 'AWS',
+            image: 'AWS Workshop.jpg'
+        },
     ];
+
 
     return (
         <motion.article
