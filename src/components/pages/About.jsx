@@ -24,32 +24,23 @@ const About = ({ setActiveTab }) => {
             transition={pageTransition}
             className="page-section"
         >
-            <header className="mb-8 relative inline-block">
-                <h2 className="text-3xl font-semibold text-white pb-3 tracking-wide">About Me</h2>
-                <div className="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-orange-yellow to-vegas-gold rounded-full"></div>
-            </header>
+            <header className="mb-8 relative inline-block"> <h2 className="text-3xl font-semibold text-white pb-3 tracking-wide">About Me</h2> <div className="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-orange-yellow to-vegas-gold rounded-full"></div> </header>
 
-            <div className="text-gray-300 font-light leading-relaxed space-y-4 mb-10">
-                <ScrollRevealText text="*🤖 Currently working as a Junior GenAI Developer at Karanji Infotech" />
-                <ScrollRevealText text="🧠 Building and working with AI/GenAI solutions and real-world applications" />
-                <ScrollRevealText text="🕶️ Previously worked as a VR Programmer Intern, with experience in Unity and immersive development" />
-                <ScrollRevealText text="💻 Practical experience in full-stack web development (React.js, Node.js, MongoDB)" />
-                <ScrollRevealText text="🤝Quick to learn and adapt, I enjoy collaborating in teams and am committed to delivering innovative solutions." />
+            <div className="text-gray-300 font-light leading-relaxed space-y-4 mb-10"> <ScrollRevealText text="🤖 Generative AI Developer building production ready AI systems with hands-on experience in RAG, hybrid search, and LLM automation." /> <ScrollRevealText text="🧠 Skilled in Python, LangChain, FastAPI, Gemini API, and prompt engineering to create accurate and scalable AI workflows." /> <ScrollRevealText text="⚙️ Delivered full-stack products with React.js, Next.js, Node.js, Supabase, and Google Cloud Run for real-world use cases." /> <ScrollRevealText text="📚 Worked on citation-enforced retrieval pipelines and RAGAS-based evaluation to improve trust, relevance, and answer quality." /> <ScrollRevealText text="🚀 Focused on building high-impact products where AI, automation, and software engineering come together to solve business problems." /> </div>
 
-                <div className="text-center md:text-left mt-8">
-                    <button
-                        onClick={() => {
-                            const section = document.getElementById('projects');
-                            if (section) section.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className="inline-block bg-orange-yellow text-black font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                    >
-                        Explore my works
-                    </button>
-                </div>
+            <div className="text-center mt-8">
+                <button
+                    onClick={() => {
+                        const section = document.getElementById('projects');
+                        if (section) section.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-block bg-orange-yellow text-black font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                    Explore my works
+                </button>
             </div>
 
-            {/* Internships */}
+            {/* Experience */}
             <div className="mb-10">
                 <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-jet rounded-xl flex items-center justify-center text-orange-yellow shadow-md">
@@ -63,7 +54,42 @@ const About = ({ setActiveTab }) => {
                         <div className="absolute w-4 h-4 rounded-full bg-orange-yellow shadow-[0_0_10px_#ffce45] -left-[9px] top-1"></div>
                         <h4 className="text-white font-medium text-lg leading-snug">Junior GenAI Developer</h4>
                         <p className="text-orange-yellow text-sm mb-2 font-medium">Karanji InfoTech Pvt Ltd | March 2026 - Present</p>
-                        <p className="text-gray-400 text-sm leading-relaxed">Working as a Junior GenAI Developer, developing AI-powered applications, integrating LLMs, and creating prompt-based workflows for automation and productivity.</p>
+                        <p className="text-gray-400 text-sm leading-relaxed"> Built production GenAI solutions end-to-end using Python, FastAPI, LangChain, Gemini 3.1 Pro, React.js, Next.js, Supabase, Node.js, Google Cloud Run, and GitHub Actions. Worked on AI Storyboard Generation and E-Learning Script & Module Generation systems, developed a full-stack project tracking platform, and contributed to RAG-based work with hybrid search, citation enforcement, and RAGAS evaluation to improve reliability and accuracy. </p>
+                        {/* Tech Stack */}
+                        <div className="mt-4 space-y-2">
+                            <h5 className="text-white text-sm font-semibold">
+                                Tech Stack
+                            </h5>
+
+                            <div className="flex flex-wrap gap-2">
+                                {[
+                                    "Python",
+                                    "FastAPI",
+                                    "LangChain",
+                                    "Gemini API",
+                                    "Prompt Engineering",
+                                    "RAG",
+                                    "Hybrid Search",
+                                    "RAGAS",
+                                    "React.js",
+                                    "Next.js",
+                                    "Node.js",
+                                    "Supabase",
+                                    "PostgreSQL",
+                                    "Google Cloud Run",
+                                    "GitHub Actions",
+                                    "REST APIs",
+                                    "Git"
+                                ].map((skill) => (
+                                    <span
+                                        key={skill}
+                                        className="px-3 py-1 text-xs rounded-full bg-[#2a2a2a] text-orange-yellow border border-[#3a3a3a] hover:border-orange-yellow transition-colors"
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     </li>
                     <li className="relative pl-8">
                         <div className="absolute w-4 h-4 rounded-full bg-jet -left-[9px] top-1 border border-gray-600"></div>
@@ -122,7 +148,7 @@ const About = ({ setActiveTab }) => {
                     </li>
                 </ol>
             </div>
-        </motion.article>
+        </motion.article >
     );
 };
 
