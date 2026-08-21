@@ -12,8 +12,53 @@ const Projects = () => {
 
     const allProjects = [
         {
+            id: 7,
+            category: ['ai'],
+            title: 'ComplianceIQ',
+            subtitle: 'AI Applications',
+            type: 'image',
+            src: '/assets/images/complianceiq.png',
+            link: 'https://github.com/pavith-raj/ComplianceIQ'
+        },
+        {
+            id: 4,
+            category: ['ai', 'mobile'],
+            title: 'AuraX - Beauty Services',
+            subtitle: 'AI Applications',
+            type: 'image',
+            src: '/assets/images/Aurax1.png',
+            link: 'https://github.com/pavith-raj/AuraX.git'
+        },
+        {
+            id: 5,
+            category: ['fullstack'],
+            title: 'Spare Parts Depot',
+            subtitle: 'Full Stack Applications',
+            type: 'image',
+            src: '/assets/images/spare.png',
+            link: 'https://github.com/pavith-raj/SpareParts.git'
+        },
+        {
+            id: 8,
+            category: ['fullstack'],
+            title: 'Question Paper Generation System',
+            subtitle: 'Full Stack Applications',
+            type: 'image',
+            src: '/assets/images/questionpaper.png',
+            link: 'https://github.com/pavith-raj/Question-Paper-Generation-System'
+        },
+        {
+            id: 6,
+            category: ['mobile'],
+            title: 'ReviewBite | Food Review App',
+            subtitle: 'Mobile Applications',
+            type: 'image',
+            src: '/assets/images/reviewbite.jpg',
+            link: 'https://github.com/pavith-raj/Review-Bite.git'
+        },
+        {
             id: 1,
-            category: 'unity',
+            category: ['unity'],
             title: 'TekkenClone Unity 3D',
             subtitle: 'Unity Developments',
             type: 'video',
@@ -23,7 +68,7 @@ const Projects = () => {
         },
         {
             id: 2,
-            category: 'unity',
+            category: ['unity'],
             title: 'VR Bowling Game',
             subtitle: 'Unity Developments',
             type: 'video',
@@ -33,44 +78,17 @@ const Projects = () => {
         },
         {
             id: 3,
-            category: 'unity',
+            category: ['unity'],
             title: '2D Mono Game',
             subtitle: 'Unity Developments',
             type: 'video',
             src: '/assets/Videos/2D Jumping Game.mp4',
             poster: '/assets/images/2dgame.png',
             link: 'https://drive.google.com/file/d/1_qopDSredpyiSMkqcaqs6JRemOaOMgGP/view?usp=sharing'
-        },
-        {
-            id: 4,
-            category: 'mobile',
-            title: 'AuraX - Beauty Services',
-            subtitle: 'Mobile Applications',
-            type: 'image',
-            src: '/assets/images/Aurax1.png',
-            link: 'https://github.com/pavith-raj/AuraX.git'
-        },
-        {
-            id: 5,
-            category: 'web',
-            title: 'Spare Parts Depot',
-            subtitle: 'Web Applications',
-            type: 'image',
-            src: '/assets/images/spare.png',
-            link: 'https://github.com/pavith-raj/SpareParts.git'
-        },
-        {
-            id: 6,
-            category: 'mobile',
-            title: 'ReviewBite | Food Review App',
-            subtitle: 'Mobile Applications',
-            type: 'image',
-            src: '/assets/images/reviewbite.jpg',
-            link: 'https://github.com/pavith-raj/Review-Bite.git'
         }
     ];
 
-    const filteredProjects = filter === 'all' ? allProjects : allProjects.filter(p => p.category === filter);
+    const filteredProjects = filter === 'all' ? allProjects : allProjects.filter(p => p.category.includes(filter));
 
     return (
         <motion.article
@@ -89,9 +107,10 @@ const Projects = () => {
             <ul className="flex flex-wrap gap-6 mb-8 text-sm md:text-base font-medium">
                 {[
                     { id: 'all', label: 'All' },
-                    { id: 'unity', label: 'Unity Developments' },
-                    { id: 'web', label: 'Web Applications' },
-                    { id: 'mobile', label: 'Mobile Applications' }
+                    { id: 'ai', label: 'AI Applications' },
+                    { id: 'fullstack', label: 'Full Stack Applications' },
+                    { id: 'mobile', label: 'Mobile Applications' },
+                    { id: 'unity', label: 'Unity Developments' }
                 ].map((f) => (
                     <li key={f.id}>
                         <button
@@ -131,7 +150,7 @@ const Projects = () => {
                                         loop
                                         muted
                                         playsInline
-                                        onMouseEnter={(e) => e.target.play().catch(() => {})}
+                                        onMouseEnter={(e) => e.target.play().catch(() => { })}
                                         onMouseLeave={(e) => { e.target.pause(); e.target.currentTime = 0; }}
                                     >
                                         <source src={project.src} type="video/mp4" />
